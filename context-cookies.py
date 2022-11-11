@@ -1,7 +1,3 @@
-context-cookies.py
-
-"/home/tervion/PycharmProjects/Metro Automation 2/venv/bin/python" /home/tervion/PycharmProjects/Metro Automation 2/test.py 
-
 [
 
 {'name': 'TSPD_101_RF', 'value': 'deleted', 'domain': 'idam.metro.bg', 'path': '/authorize/api/oauth2', 'expires': -1, 'httpOnly': True, 'secure': True, 'sameSite': 'Lax'}, 
