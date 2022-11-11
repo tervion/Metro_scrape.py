@@ -50,9 +50,30 @@ def get_cookie_playwright():
             else:
                 prev_height = curr_height
                 time.sleep(1)
+        page.reload()
+        page.evaluate(
+            """
+            var intervalID = setInterval(function () {
+                var scrollingElement = (document.scrollingElement || document.body);
+                scrollingElement.scrollTop = scrollingElement.scrollHeight;
+            }, 200);
 
-# print(context.cookies())
-        cookie_for_requests = context.cookies()[3]['value']
+            """
+        )
+        prev_height = None
+        while True:
+            curr_height = page.evaluate('(window.innerHeight + window.scrollY)')
+            if not prev_height:
+                prev_height = curr_height
+                time.sleep(1)
+            elif prev_height == curr_height:
+                page.evaluate('clearInterval(intervalID)')
+                break
+            else:
+                prev_height = curr_height
+                time.sleep(1)
+        
+        cookie_for_requests = context.cookies()[11]['value']
         browser.close()
     return cookie_for_requests
 
@@ -66,7 +87,7 @@ if __name__ == '__main__':
     data = req_with_cookie(get_cookie_playwright())
     print(data)
 
-# Used packages
+# Packages
 
 #Playwright
 #PyTest
