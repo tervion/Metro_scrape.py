@@ -3,7 +3,7 @@ Authenticate.py
 #SELF NOTE: Types of tokens - Id & Access
 #SELF NOTE: Extract token data tool: https://jwt.io
 
-#Authenticate json: Request URL
+#Login: Request URL
 https://idam.metro.bg/web/authc/authenticate
 https://shop.metro.bg/explore.login.v1/auth/loginWithIdamAccessToken?country=BG
 
