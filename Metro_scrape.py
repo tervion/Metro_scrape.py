@@ -1,5 +1,3 @@
-# Metro_scrape.py
-
 import time
 import httpx
 from playwright.sync_api import sync_playwright
@@ -54,7 +52,7 @@ def get_cookie_playwright():
                 time.sleep(1)
 
 # print(context.cookies())
-        cookie_for_requests = context.cookies()[11]['value']
+        cookie_for_requests = context.cookies()[3]['value']
         browser.close()
     return cookie_for_requests
 
@@ -68,7 +66,7 @@ if __name__ == '__main__':
     data = req_with_cookie(get_cookie_playwright())
     print(data)
 
-# Packages
+# Used packages
 
 #Playwright
 #PyTest
