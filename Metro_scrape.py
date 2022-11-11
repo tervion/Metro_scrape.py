@@ -1,3 +1,5 @@
+# Metro_scrape.py
+
 import time
 import httpx
 from playwright.sync_api import sync_playwright
@@ -25,10 +27,22 @@ def get_cookie_playwright():
         context = browser.new_context()
         page = context.new_page()
         page.goto('https://shop.metro.bg/shop/cart')
+
+        page.locator('input#user_id')
+        page.hover('input#user_id')
+        page.click('input#user_id')
         page.fill('input#user_id', 'office@tervion.bg')
+
+        page.locator('input#password')
+        page.hover('input#password')
+        page.click('input#user_id')
         page.fill('input#password', 'Metro1234')
+
+        page.locator('button[type=submit]')
+        page.hover('button[type=submit]')
         page.click('button[type=submit]')
         page.click('button.btn-primary.accept-btn.field-accept-button-name')
+
         page.evaluate(
             """
             var intervalID = setInterval(function () {
@@ -72,8 +86,8 @@ def get_cookie_playwright():
             else:
                 prev_height = curr_height
                 time.sleep(1)
-        
-        cookie_for_requests = context.cookies()[11]['value']
+
+        cookie_for_requests = context.cookies()[3]['value']
         browser.close()
     return cookie_for_requests
 
