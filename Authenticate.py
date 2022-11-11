@@ -29,7 +29,7 @@ eNpVUsmSozgQ/aLqYLHxcMSsEiAwZrMuEyDAIMDGhY2Br29RVTPRfVAo4uVbMlMqF1jnJmm8Bp6jFfCo
 #1.1.1.1 Response_JWT_decoded-HEADER:
 {"alg": "RS256"}
 
-#1.1.1.2 Response_JWT_decoded-PAYLOAD
+#1.1.1.2 Response_JWT_decoded-PAYLOAD:
 {
   "iss": "Issuer",
   "aud": "Audience",
@@ -47,7 +47,7 @@ eNpVUsmSozgQ/aLqYLHxcMSsEiAwZrMuEyDAIMDGhY2Br29RVTPRfVAo4uVbMlMqF1jnJmm8Bp6jFfCo
   "issueDate": 1668167498428
 }
 
-#1.1.1.3. Response_JWT_decoded-VERIFY SIGNATURE
+#1.1.1.3. Response_JWT_decoded-VERIFY: SIGNATURE
 RSASHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),)
@@ -97,7 +97,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IktfYWE1NTAxNWEtMjA2YS0xMWVkLTk4ZDUt
   "upn": "office@tervion.bg"
 }
 
-#2.2.1.3. Req_payload_decoded-VERIFY SIGNATURE
+#2.2.1.3. Req_payload_decoded-VERIFY SIGNATURE:
 RSASHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),)
